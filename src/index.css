@@ -1,13 +1,113 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Poppins:wght@400;500;600&display=swap');
+:root{
+  --primary: linear-gradient(-45deg, #C4F4F2, #69EBFC) ;
+  --secondary: linear-gradient(45deg, #CE9EF3, #F6F3FF) ;
+  --dark: #121212;
+  --light: #FFFFFF;
+  --grey: #888888;
+
+  --font: 'Poppins', sans-serif;
+  --font-quote: 'Acme', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+body{
+  background-color: var(--dark);
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.quote{
+  position: relative;
+}
+
+blockquote{
+  font-family: var(--font-quote);
+  max-width: 730px;
+  font-size: 2rem;
+  background-color: #333333;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  color: white;
+  box-shadow: #FFFFFF;
+}
+
+.anime, .character{
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1.5rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  max-width: 360px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.anime{
+  background: var(--secondary);
+  font-weight: 400;
+  transform: translate(-25%, 50%);
+}
+
+.character{
+  background: var(--primary);
+  font-weight: 700;
+  transform: translate(-25%, 50%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+button{
+  appearance: none;
+  border: none;
+  outline: none;
+  background: whitesmoke;
+  border-radius: 2rem;
+  padding: 0.4rem 1.5rem;
+  margin: 80px;
+  cursor: pointer;
+  transition: 0.6s;
+  font-size: 1.2rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+button:hover{
+  opacity: 10;
+}
+
+@media only screen and (max-width: 700px) {
+  .anime, .character{
+  max-width: 250px;
+    font-size:  0.8rem;
+    
+  }
+  .anime{
+  transform: translate(-5%, 50%);
+
+  }
+  .quote{
+    max-width: 300px;
+  }
+  button{
+    font-size: 0.8rem;
+  }
+  blockquote{
+    font-size: 1.5rem;
+  }
 }
